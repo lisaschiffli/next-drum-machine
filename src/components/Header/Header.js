@@ -5,12 +5,13 @@ import { Volume2, VolumeX } from 'react-feather';
 import VisuallyHidden from '../VisuallyHidden';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 import styles from './Header.module.css';
+import { useSoundEnabled } from '../SoundEnabledProvider';
 
 function Header() {
   const id = React.useId();
 
   // TODO: Global state?
-  const soundEnabled = true;
+  const {soundEnabled, toggleSound} = useSoundEnabled();
 
   return (
     <header className={styles.wrapper}>
@@ -18,10 +19,11 @@ function Header() {
         className={styles.innerWrapper}
       >
         <a href="/">Kool Website</a>
-
-        <button
+                                
+        <button      
           onClick={() => {
             // TODO: flip `soundEnabled`
+            toggleSound();
           }}
         >
           {soundEnabled ? (

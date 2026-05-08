@@ -27,7 +27,7 @@ function Home() {
         ever. Press the buttons to hear the music.
         Tubular!
       </p>
-      <DrumMachine />
+        <DrumMachine />
     </MaxWidthWrapper>
   );
 }
